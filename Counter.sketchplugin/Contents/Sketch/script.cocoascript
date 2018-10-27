@@ -1,0 +1,28 @@
+          var onRun = function(context) {
+          var sketch = require('sketch');
+var UI = require('sketch/ui');
+var selectedDocument = sketch.getSelectedDocument();
+var numberOfSymbolMasters = 0;
+var numberOfSymbolInstances = 0;
+
+selectedDocument.pages.forEach(function(page) {
+    page.layers.forEach(function(layer) {
+        if (layer.type == 'SymbolMaster') {
+            numberOfSymbolMasters = numberOfSymbolMasters + 1;
+        }
+
+        if (layer.type == 'Artboard') {
+            layer.layers.forEach(function(artboardLayer) {
+                if (artboardLayer.type == 'SymbolInstance') {
+                    numberOfSymbolInstances = numberOfSymbolInstances + 1;
+                }
+            });
+        }
+    })
+})
+
+UI.message(`${numberOfSymbolMasters} Symbols and ${numberOfSymbolInstances} Symbol Instances.`);
+
+
+          };
+          

@@ -1,0 +1,24 @@
+{
+  "author" : "",
+  "commands" : [
+    {
+      "script" : "script.cocoascript",
+      "name" : "Counter",
+      "handlers" : {
+        "run" : "onRun"
+      },
+      "identifier" : "com.bohemiancoding.sketch.runscriptidentifier"
+    }
+  ],
+  "menu" : {
+    "title" : "Counter",
+    "items" : [
+      "com.bohemiancoding.sketch.runscriptidentifier"
+    ]
+  },
+  "identifier" : "com.example.sketch.cf19738b-ad44-4b57-a218-51e1985472b2",
+  "version" : "1.0",
+  "description" : "",
+  "authorEmail" : "",
+  "name" : "Counter"
+}
