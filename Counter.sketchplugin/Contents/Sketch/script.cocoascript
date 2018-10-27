@@ -1,5 +1,5 @@
-          var onRun = function(context) {
-          var sketch = require('sketch');
+var onRun = function(context) {
+var sketch = require('sketch');
 var UI = require('sketch/ui');
 var selectedDocument = sketch.getSelectedDocument();
 var numberOfSymbolMasters = 0;
@@ -9,6 +9,10 @@ selectedDocument.pages.forEach(function(page) {
     page.layers.forEach(function(layer) {
         if (layer.type == 'SymbolMaster') {
             numberOfSymbolMasters = numberOfSymbolMasters + 1;
+        }
+
+        if (artboardLayer.type == 'SymbolInstance') {
+            numberOfSymbolInstances = numberOfSymbolInstances + 1;
         }
 
         if (layer.type == 'Artboard') {
@@ -24,5 +28,5 @@ selectedDocument.pages.forEach(function(page) {
 UI.message(`${numberOfSymbolMasters} Symbols and ${numberOfSymbolInstances} Symbol Instances.`);
 
 
-          };
-          
+};
+
